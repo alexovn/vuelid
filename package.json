@@ -1,0 +1,60 @@
+{
+  "name": "vuelid",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/vuelid.umd.cjs",
+  "module": "./dist/vuelid.js",
+  "types": "./dist/vuelid.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/vuelid.d.ts",
+      "import": "./dist/vuelid.js"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "run-p type-check \"build-only {@}\" --",
+    "preview": "vite preview",
+    "test:unit": "vitest",
+    "build-only": "vite build",
+    "type-check": "vue-tsc --build",
+    "lint": "run-s lint:*",
+    "lint:oxlint": "oxlint . --fix",
+    "lint:eslint": "eslint . --fix --cache"
+  },
+  "dependencies": {
+    "vue": "^3.5.31",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@microsoft/api-extractor": "^7.58.5",
+    "@tsconfig/node24": "^24.0.4",
+    "@types/jsdom": "^28.0.1",
+    "@types/node": "^24.12.0",
+    "@vitejs/plugin-vue": "^6.0.5",
+    "@vitest/eslint-plugin": "^1.6.13",
+    "@vue/eslint-config-typescript": "^14.7.0",
+    "@vue/test-utils": "^2.4.6",
+    "@vue/tsconfig": "^0.9.1",
+    "eslint": "^10.1.0",
+    "eslint-plugin-oxlint": "~1.57.0",
+    "eslint-plugin-vue": "~10.8.0",
+    "jiti": "^2.6.1",
+    "jsdom": "^29.0.1",
+    "npm-run-all2": "^8.0.4",
+    "oxlint": "~1.57.0",
+    "typescript": "^5.9.3",
+    "unplugin-dts": "1.0.0-beta.6",
+    "vite": "^8.0.3",
+    "vite-plugin-vue-devtools": "^8.1.1",
+    "vitest": "^4.1.2",
+    "vue-tsc": "^3.2.6"
+  },
+  "engines": {
+    "node": "^20.19.0 || >=22.12.0"
+  }
+}

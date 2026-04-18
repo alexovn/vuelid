@@ -1,0 +1,12 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": ["lib/**/*.ts"],
+  "compilerOptions": {
+    "lib": ["ESNext", "DOM"],
+    "rootDir": "./lib",
+    "declaration": true,
+    "emitDeclarationOnly": true,
+    "noEmit": false,
+    "stripInternal": true
+  }
+}
