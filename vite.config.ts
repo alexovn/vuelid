@@ -31,10 +31,11 @@ export default defineConfig({
       fileName: 'vuelid',
     },
     rolldownOptions: {
-      external: ['vue'],
+      external: ['vue', 'zod'],
       output: {
         globals: {
-          vue: 'Vue'
+          vue: 'Vue',
+          zod: 'zod'
         }
       }
     }

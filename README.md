@@ -1,17 +1,23 @@
 # Vuelid
 
-Vuelid is a tiny validation library for Vue.js based on Zod. Fully typed. Dual modes. Errors highlight. And more.
+Vuelid is a tiny validation library for Vue.js (3+) based on Zod. Fully typed. Dual modes. Errors highlight. And more.
 
 ## Core Features  
 
+- Vue.js (3+) compatible
 - Zod's validation schema support
 - Fully typed
 - Lazy and eager modes
 - Scroll to error
 - Highlight errors in form
-- Zero extra dependencies
 
 ## How To Use
+
+Install the required peer dependencies first:
+
+```bash
+npm install vue zod
+```
 
 The composable takes a Zod object schema (can be a reactive variable) and a data object that holds the form data that you want to validate (can be either reactive or ref) as parameters and returns refs and functions that you can then use in your components. Optionally it can also accept an options object to set the validation mode.
 

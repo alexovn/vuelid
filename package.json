@@ -37,7 +37,7 @@
     "lint:oxlint": "oxlint . --fix",
     "lint:eslint": "eslint . --fix --cache"
   },
-  "dependencies": {
+  "peerDependencies": {
     "vue": "^3.5.31",
     "zod": "^4.3.6"
   },
@@ -63,7 +63,9 @@
     "vite": "^8.0.3",
     "vite-plugin-vue-devtools": "^8.1.1",
     "vitest": "^4.1.2",
-    "vue-tsc": "^3.2.6"
+    "vue-tsc": "^3.2.6",
+    "vue": "^3.5.31",
+    "zod": "^4.3.6"
   },
   "engines": {
     "node": "^20.19.0 || >=22.12.0"
