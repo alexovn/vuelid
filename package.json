@@ -1,10 +1,12 @@
 {
   "name": "vuelid",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.0.1",
   "type": "module",
   "files": [
-    "dist"
+    "dist",
+    "LICENSE",
+    "package.json",
+    "README.md"
   ],
   "main": "./dist/vuelid.umd.cjs",
   "module": "./dist/vuelid.js",
@@ -12,9 +14,18 @@
   "exports": {
     ".": {
       "types": "./dist/vuelid.d.ts",
-      "import": "./dist/vuelid.js"
+      "import": "./dist/vuelid.js",
+      "require": "./dist/vuelid.umd.cjs"
     }
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/alexovn/vuelid.git"
+  },
+  "bugs": {
+    "url": "https://github.com/alexovn/vuelid/issues"
+  },
+  "homepage": "https://github.com/alexovn/vuelid#readme",
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",

@@ -29,7 +29,6 @@ export default defineConfig({
       entry: resolve(import.meta.dirname, 'lib/main.ts'),
       name: 'vuelid',
       fileName: 'vuelid',
-      formats: ['es']
     },
     rolldownOptions: {
       external: ['vue'],
