@@ -1,23 +1,10 @@
 {
-  "name": "vuelid",
-  "version": "1.0.0",
+  "name": "@alexovn/vuelid",
   "type": "module",
-  "files": [
-    "dist",
-    "LICENSE",
-    "package.json",
-    "README.md"
-  ],
-  "main": "./dist/vuelid.umd.cjs",
-  "module": "./dist/vuelid.js",
-  "types": "./dist/vuelid.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/vuelid.d.ts",
-      "import": "./dist/vuelid.js",
-      "require": "./dist/vuelid.umd.cjs"
-    }
-  },
+  "version": "1.0.0",
+  "description": "A tiny validation library for Vue based on Zod.",
+  "author": "Nikita Aleksov (https://github.com/alexovn/)",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/alexovn/vuelid.git"
@@ -26,6 +13,28 @@
     "url": "https://github.com/alexovn/vuelid/issues"
   },
   "homepage": "https://github.com/alexovn/vuelid#readme",
+  "keywords": [
+    "vue",
+    "zod",
+    "validation",
+    "validate"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/vuelid.d.ts",
+      "import": "./dist/vuelid.js",
+      "require": "./dist/vuelid.umd.cjs"
+    }
+  },
+  "main": "./dist/vuelid.umd.cjs",
+  "module": "./dist/vuelid.js",
+  "types": "./dist/vuelid.d.ts",
+  "files": [
+    "dist",
+    "LICENSE",
+    "package.json",
+    "README.md"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
