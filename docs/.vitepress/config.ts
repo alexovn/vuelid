@@ -33,8 +33,18 @@ export default defineConfig({
           { text: 'Quick Start', link: '/quick-start' },
         ]
       },
-      { text: 'API', link: '/api' },
-      { text: 'Playground', link: '/playground' },
+      {
+        text: 'Core concepts',
+        items: [
+          { text: 'API', link: '/api' },
+        ]
+      },
+      {
+        text: 'Examples',
+        items: [
+          { text: 'Playground', link: '/playground' },
+        ]
+      }
     ],
 
     socialLinks: [
