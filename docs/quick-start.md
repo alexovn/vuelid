@@ -31,53 +31,60 @@ bun add @alexovn/vuelid
 
 ## Usage
 
-Import `useValidation` hook from the library, pass validation schema, form data and optional settings to its params and use its built-in functions.
+Import `useValidation` composable from the library, pass validation schema, form data and optional settings to its params and use its built-in functions.
 
 ```Vue
 <script setup lang="ts">
-import { ref, shallowRef } from 'vue';
-import { z, type ZodTypeAny } from 'zod';
-import { useValidation } from '@alexovn/vuelid';
+  import { ref, reactive } from 'vue';
+  import { z } from 'zod'
+  import { useValidation } from '../lib/main';
 
-const schema = shallowRef<ZodTypeAny>(
-  z.object({
-    name: z.string().min(1, { error: 'The name field is required' }),
-    email: z.email({ error: 'Invalid email address' }),
-    website: z.string().url({ error: 'Please enter a valid URL' }),
-    address: z.object({
-      street: z.string().min(1, { error: 'The street field is required' }),
-      city: z.string().min(1, { error: 'The city field is required' }),
-    }),
+  const schema = ref(
+    z.object({
+      name: z.string().min(1, { error: 'The name field is required' }),
+      email: z.email({ error: 'Invalid email address' }),
+    })
+  );
+
+  const form = reactive({
+    name: '',
+    email: ''
   })
-);
 
-const form = reactive({
-  name: '',
-  email: '',
-  website: '',
-  address: {
-    street: '',
-    city: '',
-  },
-});
+  const { validate, getError, isValid } = useValidation(schema, form);
 
-const {
-  validate,
-  errors,
-  isValid,
-  clearErrors,
-  getError,
-  scrollToError
-} = useValidation(schema, form, { mode: 'eager' });
+  const submit = async () => {
+    await validate();
 
-const submit = async () => {
-  await validate();
-
-  if (isValid.value) {
-    alert('Validation succeeded!');
-  } else {
-    scrollToError('.p-invalid', { offset: 24 });
-  }
-};
+    if (isValid.value) {
+      alert('Validation succeeded!');
+    }
+  };
 </script>
+
+<template>
+  <form @submit.prevent="submit">
+    <div>
+      <div>
+        <label>
+          <span>Name</span>
+          <input v-model="form.name" placeholder="Name" name="name" type="text">
+        </label>
+        <div>{{ getError('name') }}</div>
+      </div>
+
+      <div>
+        <label>
+          <span>Email</span>
+          <input v-model="form.email" placeholder="Email" name="email" type="text">
+        </label>
+        <div>{{ getError('email') }}</div>
+      </div>
+    </div>
+
+    <button type="submit">
+      Submit
+    </button>
+  </form>
+</template>
 ```
