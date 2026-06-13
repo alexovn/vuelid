@@ -2,7 +2,7 @@
 
 ## What is Vuelid?
 
-Vuelid (a portmanteau of words "Vue" and "Valid") is a tiny validation library for Vue based on Zod schemas. It's simple, fast and yet powerful enough to cover many cases for forms validation.
+Vuelid (a portmanteau of words "Vue" and "Valid") is a tiny validation library for Vue based on Zod schemas. It's simple, fast and yet powerful enough to cover many cases of forms validation.
 
 It was made as a replacement for full-blown solutions like `VeeValidate`, `Vuelidate`, `FormKit` etc., because sometimes we need some light and plug-n-play approach that just works.
 

@@ -1,2 +1,6 @@
 allowBuilds:
   esbuild: true
+catalog:
+  vue: ^3.5.31
+packages:
+  - docs
