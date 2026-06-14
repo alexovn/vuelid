@@ -42,7 +42,7 @@ export default defineConfig({
           { text: 'Introduction', link: '/introduction' },
           { text: 'Quick Start', link: '/quick-start' },
           { text: 'API', link: '/api' },
-          { text: 'Examples', link: '/examples' },
+          { text: 'Examples', link: '/examples', activeMatch: '/examples' },
           { text: 'Credits', link: '/credits' }
         ]
       },
