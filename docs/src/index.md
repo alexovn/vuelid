@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "Vuelid"
-  text: "A tiny validation library for Vue based on Zod"
+  text: "A tiny validation library for Vue.js based on Zod"
   tagline: Validate your forms conveniently
   image:
     src: /logo.svg
@@ -25,7 +25,7 @@ features:
       width: '28px'
       height: '28px'
       wrap: true
-    title: Native Vue Support
+    title: Vue Support
     details: Compatible with Vue 3.x
   - icon:
       src: /logos/zod.png
