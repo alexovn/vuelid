@@ -37,12 +37,15 @@ Import `useValidation` composable from the library, pass validation schema, form
 <script setup lang="ts">
   import { ref, reactive } from 'vue';
   import { z } from 'zod'
-  import { useValidation } from '../lib/main';
+  import { useValidation } from '@alexovn/vuelid';
 
   const schema = ref(
     z.object({
       name: z.string().min(1, { error: 'The name field is required' }),
-      email: z.email({ error: 'Invalid email address' }),
+      email: z
+        .string()
+        .min(1, { error: 'The email field is required' })
+        .pipe(z.email({ error: 'Invalid email' })),
     })
   );
 
