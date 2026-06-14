@@ -1,14 +1,17 @@
 import { defineConfig } from 'vitepress'
 import { groupIconMdPlugin, groupIconVitePlugin } from 'vitepress-plugin-group-icons'
 
+const base = process.env.VITEPRESS_BASE ?? '/vuelid/'
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   srcDir: 'src',
+  base,
   lang: 'en-US',
   title: "Vuelid",
   description: "Vuelid is a tiny validation library for Vue based on Zod. Fully typed. Dual modes. Errors highlight. And more",
   head: [
-    ['link', { rel: 'icon', href: '/favicon.ico' }]
+    ['link', { rel: 'icon', href: `${base}favicon.ico` }]
   ],
   cleanUrls: true,
   lastUpdated: true,
